@@ -40,8 +40,8 @@ export default function Auth({ onLogin, onLogout, user }: AuthProps) {
     setError("");
 
     try {
-      const endpoint = isLogin ? "/api/auth/login" : "/api/auth/register";
-      const body = isLogin ? { email, password } : { email, password, name };
+      const endpoint = isLogin ? "/api/login" : "/api/register";
+      const body = isLogin ? { email, password } : { email, password };
 
       const res = await fetch(endpoint, {
         method: "POST",
