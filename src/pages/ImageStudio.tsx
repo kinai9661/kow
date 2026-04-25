@@ -275,7 +275,12 @@ export default function ImageStudio() {
           "Content-Type": "application/json",
           "Authorization": `Bearer ${token}`,
         },
-        body: JSON.stringify({ prompt, model, ratio, style: style !== "none" ? style : undefined, n: count, image: referenceImage }),
+        body: JSON.stringify({
+          prompt,
+          model,
+          ratio,
+          style,
+        }),
       });
 
       setQueuePosition(null);
